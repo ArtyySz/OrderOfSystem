@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Система управления заказами</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        button { margin: 5px; padding: 8px 15px; cursor: pointer; }
+        .history { background: #f5f5f5; padding: 10px; margin: 10px 0; border-radius: 3px; }
+        .error { color: red; background: #ffe6e6; padding: 10px; border-radius: 3px; }
+        .success { color: green; background: #e6ffe6; padding: 10px; border-radius: 3px; }
+        .user-info, .order-info { margin: 5px 0; }
+        select, button { padding: 8px; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Система управления заказами</h1>
+
+    <div class="section">
+        <h2>Пользователи</h2>
+        <div id="users"></div>
+    </div>
+
+    <div class="section">
+        <h2>Создать заказ</h2>
+        <select id="userSelect"></select>
+        <button onclick="createOrder()">Создать заказ</button>
+    </div>
+
+    <div class="section">
+        <h2>Заказы</h2>
+        <select id="orderSelect" onchange="selectOrder()">
+            <option value="">Выберите заказ</option>
+        </select>
+        <div id="orderInfo"></div>
+    </div>
+
+    <div class="section">
+        <h2>Действия с заказом</h2>
+        <div id="actions"></div>
+    </div>
+
+    <div class="section">
+        <h2>История заказа</h2>
+        <div id="history"></div>
+    </div>
+
+    <script src="store.js"></script>
+</body>
+</html>
